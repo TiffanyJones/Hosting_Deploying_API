@@ -1,4 +1,5 @@
 const main = document.querySelector("main");
+
 const roverList = document.querySelector(".rover-list");
 const errorMsg = document.querySelector(".error-msg");
 const dateInput = document.querySelector("#date-input");
