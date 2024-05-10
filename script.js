@@ -1,11 +1,9 @@
 const main = document.querySelector("main");
-
 const roverList = document.querySelector(".rover-list");
 const errorMsg = document.querySelector(".error-msg");
 const dateInput = document.querySelector("#date-input");
 const submitButton = document.querySelector("#submit-button");
 
-const apiKey = "ShEB5biaOhzZvSSF3A9Xc5BZY22BbOhh1FQeB3YQ";
 
 async function fetchData(url, handleData) {
   try {
