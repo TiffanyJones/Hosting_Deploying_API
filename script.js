@@ -7,7 +7,6 @@ const submitButton = document.querySelector("#submit-button");
 
 const apiKey = "ShEB5biaOhzZvSSF3A9Xc5BZY22BbOhh1FQeB3YQ";
 
-
 async function fetchData(url, handleData) {
   try {
     const response = await fetch(url);
@@ -24,8 +23,6 @@ async function fetchData(url, handleData) {
   }
 }
 
-
-
 function handleRoverData(data) {
   roverList.innerHTML = "";
   if (!data.photos.length) {
@@ -33,7 +30,7 @@ function handleRoverData(data) {
       "<li>No photos were taken on this date. Please select another date.</li>";
   } else {
     const photos = data.photos
-      .map(photo => `<li><img src="${photo.img_src}" alt="Rover photo"></li>`)
+      .map((photo) => `<li><img src="${photo.img_src}" alt="Rover photo"></li>`)
       .join("");
     roverList.insertAdjacentHTML("beforeend", photos);
   }
@@ -45,7 +42,7 @@ submitButton.addEventListener("click", function () {
     ? dateInput.value
     : new Date().toISOString().slice(0, 10);
 
-  const roverURL = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${apiKey}`;
+  const roverURL = `https://lastspacechallenge.netlify.app/.netlify/functions/API_KEY?date=${date}`;
 
   fetchData(roverURL, handleRoverData);
 });
